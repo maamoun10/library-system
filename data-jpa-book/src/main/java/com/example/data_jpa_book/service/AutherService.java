@@ -25,17 +25,25 @@ public class AutherService {
     };
 
     public Auther insert(Auther auther){
+
         return autherRepo.save(auther);
+    };
+
+    public List<Auther> insert(List<Auther> auther){
+
+        return autherRepo.saveAll(auther);
     };
 
 
     public Auther update(Auther entity){
-
         Auther auther=findById(entity.getId());
-
         auther.setName(auther.getName());
-
         return autherRepo.save(auther);
+
+    };
+
+    public void deleteById(Long id ){
+            autherRepo.deleteById(id);
 
     };
 
